@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio Fotógrafo</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin: 0; padding: 0; }
+    header { background: #111; color: white; padding: 20px; }
+    .galeria { display: flex; flex-wrap: wrap; justify-content: center; }
+    .galeria img { width: 250px; margin: 10px; border-radius: 8px; }
+    #adminPanel { display:none; padding:20px; background:#f4f4f4; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meu Site de Fotografia</h1>
+    <img src="logo.png" id="logo" width="100">
+  </header>
+
+  <h2>Portfólio Público</h2>
+  <div class="galeria" id="publico"></div>
+
+  <div id="adminPanel">
+    <h2>Painel do Fotógrafo</h2>
+    <p>Use Cloudinary para subir fotos e cole os links abaixo:</p>
+    <textarea id="json" rows="10" cols="40"></textarea>
+  </div>
+
+<script>
+let clicks = 0, last = 0;
+document.getElementById('logo').onclick = () => {
+  const now = Date.now();
+  if (now - last > 1500) clicks = 0;
+  clicks++; last = now;
+  if (clicks === 3) {
+    const pwd = prompt("Senha?");
+    if (pwd === "minhaSenhaSecreta") {
+      document.getElementById('adminPanel').style.display = "block";
+    }
+  }
+};
+
+// Exemplo de fotos dos clientes integradas
+const fotosPublicas = [
+  "https://res.cloudinary.com/SEU-USUARIO/image/upload/foto1.jpg",
+  "https://res.cloudinary.com/SEU-USUARIO/image/upload/foto2.jpg"
+];
+
+const galeria = document.getElementById("publico");
+fotosPublicas.forEach(f => {
+  const img = document.createElement("img");
+  img.src = f;
+  galeria.appendChild(img);
+});
+</script>
+</body>
+</html>
