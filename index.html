@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skydaie Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Skydaie Studio">
+      <h1>Skydaie Studio</h1>
+    </div>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Momentos únicos, eternizados.</h2>
+    <p>Fotografia profissional de eventos, ensaios e histórias reais.</p>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2>Sobre Nós</h2>
+    <p>O Skydaie Studio nasceu com o propósito de registrar a essência de cada momento. Trabalhamos com fotografia de eventos e ensaios ao ar livre, utilizando equipamentos de alta performance e olhar artístico para capturar memórias inesquecíveis.</p>
+  </section>
+
+  <section id="galeria" class="gallery">
+    <h2>Galeria</h2>
+    <div class="grid">
+      <img src="foto1.jpg" alt="Evento">
+      <img src="foto2.jpg" alt="Ensaio">
+      <img src="foto3.jpg" alt="Natureza">
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2>Contato</h2>
+    <p>Agende seu ensaio ou evento conosco.</p>
+    <p><strong>Email:</strong> contato@skydaie.com</p>
+    <p><strong>Instagram:</strong> @skydaie.studio</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Skydaie Studio — Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+<!-- Painel secreto do administrador -->
+<div id="admin-panel" class="hidden">
+  <h2>Painel do Fotógrafo</h2>
+  <p>Bem-vindo, administrador.</p>
+  <button onclick="fecharPainel()">Fechar Painel</button>
+
+  <div class="upload-area">
+    <h3>Adicionar Fotos à Galeria</h3>
+    <input type="file" id="fotoInput" multiple>
+    <button onclick="adicionarFotos()">Enviar</button>
+  </div>
+
+  <div class="clientes">
+    <h3>Gerenciar Pastas de Clientes</h3>
+    <input type="text" id="nomeCliente" placeholder="Nome do Cliente">
+    <button onclick="criarPasta()">Criar Pasta</button>
+    <div id="listaPastas"></div>
+  </div>
+</div>
+
+
+</body>
+</html>
